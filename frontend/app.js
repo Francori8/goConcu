@@ -3,7 +3,7 @@ import { CONCEPTOS } from "./conceptos.js";
 
 const BACKEND_URL = window.location.hostname === "localhost"
   ? "http://localhost:8080"
-  : "https://TU-BACKEND.railway.app"; // ← reemplazar después del deploy
+  : "https://goconcu-production.up.railway.app";
 
 // ── Estado ────────────────────────────────────────────────────────────────
 
