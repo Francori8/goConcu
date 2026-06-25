@@ -1,0 +1,12 @@
+# Binarios compilados
+backend/backend.exe
+backend/backend.exe~
+backend/backend
+
+# Temporales de Go
+*.test
+*.out
+
+# Sistema
+.DS_Store
+Thumbs.db

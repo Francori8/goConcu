@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go Concurrency Playground</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Monaco Editor desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-bar">
+        <div class="header-izq">
+          <button id="btn-toggle-ejemplos" class="btn-toggle-ejemplos" aria-expanded="true" title="Mostrar/ocultar ejemplos">☰</button>
+          <h1>Go Concurrency Playground</h1>
+        </div>
+        <div class="header-der">
+          <span class="go-badge">Go WASM</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <aside id="panel-ejemplos">
+        <div id="contenedor-botones"></div>
+      </aside>
+
+      <section id="contenedor-editor">
+        <div id="monaco-editor"></div>
+        <div class="editor-footer">
+          <div id="panel-error" hidden></div>
+          <div id="selector-modo">
+            <button class="modo-btn modo-activo" data-modo="cooperativo">Cooperativo</button>
+            <button class="modo-btn" data-modo="concurrente">Concurrente</button>
+            <button class="modo-btn" data-modo="paralelo">Paralelo</button>
+          </div>
+          <button id="btn-ejecutar">▶ Ejecutar</button>
+          <button id="btn-limpiar">Limpiar traza</button>
+        </div>
+      </section>
+
+      <div id="divisor"></div>
+
+      <section id="visual">
+        <div id="panel-goroutines">
+          <h2 class="subtitulo">Goroutines</h2>
+          <div id="goroutines-lista"></div>
+        </div>
+
+        <!-- Tabs -->
+        <div id="panel-tabs">
+          <div class="tabs-header">
+            <button class="tab-btn tab-activa" data-tab="diagrama">Diagrama</button>
+            <button class="tab-btn" data-tab="traza">Traza</button>
+            <button class="tab-btn" data-tab="conceptos">Conceptos</button>
+            <span id="estado-wasm" class="estado-badge"></span>
+          </div>
+
+          <div class="tab-contenido" id="tab-diagrama">
+            <div id="diagrama"></div>
+          </div>
+
+          <div class="tab-contenido" id="tab-traza" hidden>
+            <div id="traza"></div>
+          </div>
+
+          <div class="tab-contenido" id="tab-conceptos" hidden>
+            <div id="conceptos"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
